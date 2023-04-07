@@ -45,6 +45,7 @@
     font-weight: 700;
     color: rgb(255, 255, 255);
     border: none;
+    z-index: 3;
 }
 
 .services-middle-container {

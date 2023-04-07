@@ -1,7 +1,7 @@
 import '../styles/Home.css';
 import React, { useState, useRef, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { ShowModal, HideModal, ShowAccordian0, ShowAccordian01, ShowAccordian1, ShowAccordian2, ShowAccordian3, ShowAccordian4, ShowAccordian5 } from '../actions.js';
+import { ShowModal, HideModal} from '../actions.js';
 import centra from "../images/centra-C-no-background.png";
 import barChart from "../images/money-chart.png";
 import {Modal} from "../components/Modal.js";
@@ -85,7 +85,10 @@ export function Home(props) {
             <p class="we-are-centra-caption-2">
                 We work with brands to help expand their online presence and imporve their overall revanue throught optimized management of Meta and Google ads. If you are looking to offload your marketing efforts to exprienced experts to create an all-inclusive marketing enviorment built for scale? We are here to help.
             </p>
-            <button class="we-are-centra-btn">Learn More</button>
+            <button class="we-are-centra-btn" onClick={() => dispatch(ShowModal())}>Learn More</button>
+            {showModal && (document.body.style.overflow = "hidden") &&
+           <Modal/>
+          }
           </div>
         </div>
         <div class="right-side-we-are-centra">
@@ -105,9 +108,12 @@ export function Home(props) {
             <br/>
             <li><strong>Comprehensive Assessment For Successful Campaigns</strong>: After working with us we will be able to provide our clients with use ful user feedback as to which campaigns we most effective in producing the desired result. </li> 
           </ul>
-          <button class="free-strat-btn">
+          <button class="free-strat-btn" onClick={() => dispatch(ShowModal())}>
             get my free marketing strategy
           </button>
+          {showModal && (document.body.style.overflow = "hidden") &&
+           <Modal/>
+          }
         </div>
         <div class="picture-middle">
             <img src={barChart} alt="" class="barchart"></img>
@@ -185,9 +191,12 @@ export function Home(props) {
         </div>
         <div class="work-with-us">
           <h1>YOUR AUDIENCE IS LOOKING FOR YOU RIGHT NOW. DON’T WAIT.</h1>
-          <button class="contact-now-btn">
+          <button class="contact-now-btn"  onClick={() => dispatch(ShowModal())}>
               Contact Us
           </button>
+          {showModal && (document.body.style.overflow = "hidden") &&
+           <Modal/>
+          }
         </div>
     </div>
     

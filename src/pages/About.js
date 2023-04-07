@@ -1,12 +1,20 @@
 import '../styles/About.css';
+import React, { useState, useRef, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { ShowModal, HideModal } from '../actions.js';
 import wash from '../images/washington_skyline.jpg';
 import stock1 from '../images/business_stock_one.png';
 import stock2 from '../images/business_stock_two.png';
 import stock3 from '../images/business_stock_three.png';
 import stock4 from '../images/business_stock_four.png';
+import {Modal} from "../components/Modal.js";
 
 
 export function About(props) {
+        
+      const showModal = useSelector((state) => state.showModal);
+
+      const dispatch = useDispatch();
     return (
         <div class="about-container">
             <h3>How <mark>Centra</mark> Came To Be</h3>
@@ -14,7 +22,9 @@ export function About(props) {
                 <div class="about-image-container">
                     <img src={wash} alt=""></img>
                     <button class="about-page-btn">
+                    <a href='/contact'>
                         Together We Will succeed
+                    </a>
                     </button>
                 </div>
                 <div class="about-us-text">
@@ -59,8 +69,10 @@ export function About(props) {
                 </div>
                 <div class="work-with-us">
                     <h1>Work With Us.</h1>
-                    <button class="contact-now-btn">
-                        Contact Now
+                    <button class="contact-now-btn"  onClick={() => dispatch(ShowModal())}>
+                    <a href='/contact'>
+                        Contact Us
+                    </a>
                     </button>
                 </div>
             </div>

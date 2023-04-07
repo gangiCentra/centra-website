@@ -133,7 +133,9 @@ export function WhoWeHelp(props){
                 <div class="work-with-us">
                     <h1>Work With Us.</h1> 
                     <button class="contact-now-btn">
+                        <a href='/contact'>
                         Contact Us
+                        </a>
                     </button>
                 </div>
             </div> 

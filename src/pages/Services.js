@@ -1,19 +1,30 @@
 import '../styles/Services.css';
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { ShowModal, HideModal } from '../actions.js';
 import globe from '../images/connect-the-world.png';
 import standout from '../images/standout.png';
 import centra from "../images/centra-C-no-background.png";
+import {Modal} from "../components/Modal.js";
 
 
 export function Services(props) {
+
+    const showModal = useSelector((state) => state.showModal);
+    const dispatch = useDispatch();
+
     return (
         <div class="parent-container">
             <div class="services-top-container">
                 <img src={centra}/>
                 <h1><mark>Ecommerce</mark> Marketing Services<br/> Centered for <mark>Profit Growth</mark></h1>
-                <caption>Centra Marketing is an ecommerce focused Marketing Agency that specializes in crafting effective campaigns for maximum impact, with a speacialty in driving business growth and increasing revenue. </caption>
-                <button class="contact-now-btn">
+                <span>Centra Marketing is an ecommerce focused Marketing Agency that specializes in crafting effective campaigns for maximum impact, with a speacialty in driving business growth and increasing revenue. </span>
+                <button className="contact-now-btn" onClick={() => dispatch(ShowModal())}>
                     Get My Free Marketing Strategy
                 </button>
+                {showModal && (document.body.style.overflow = "hidden") &&
+                    <Modal/>
+                }
             </div>
             <div class="services-middle-container">
                 <div class="header-container">
