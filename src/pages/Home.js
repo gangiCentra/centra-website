@@ -3,6 +3,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { ShowModal, HideModal, ShowAccordian0, ShowAccordian01, ShowAccordian1, ShowAccordian2, ShowAccordian3, ShowAccordian4, ShowAccordian5 } from '../actions.js';
 import centra from "../images/centra-C-no-background.png";
+import barChart from "../images/money-chart.png";
 import {Modal} from "../components/Modal.js";
 
 
@@ -109,7 +110,7 @@ export function Home(props) {
           </button>
         </div>
         <div class="picture-middle">
-            <img src="https://pbs.twimg.com/profile_images/949787136030539782/LnRrYf6e_400x400.jpg" alt=""></img>
+            <img src={barChart} alt="" class="barchart"></img>
         </div>
       </div>
       <h2 class="icon-header"><mark>Highlighting</mark> our values, goals, and <mark  >our objectives</mark></h2>

@@ -248,12 +248,11 @@ p {
 }
 
 .picture-middle {
-    padding: 4%;
     width: fit-content;
 }
 
 .picture-middle img {
-    width: 100%;
+    width: 30vw;
     height: inherit;
 }
 
